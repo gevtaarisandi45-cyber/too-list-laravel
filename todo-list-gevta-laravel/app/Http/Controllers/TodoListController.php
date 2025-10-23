@@ -17,6 +17,8 @@ class TodoListController extends Controller
    {
    return view('todo.form_tambah');
    }
+
+   
    public function simpan(Request $request)
    {
    $request->validate([
@@ -33,5 +35,12 @@ class TodoListController extends Controller
    ]);
 
    return redirect('/todo');
+   }
+   public function hapus($id)
+   {
+   $todo = TodoList::findOrFail($id);
+   $todo->delete();
+
+   return redirect('/todo')->with('succes', 'Data Berhasil Dihapus!');
    }
 }

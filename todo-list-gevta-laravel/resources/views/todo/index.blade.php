@@ -32,5 +32,13 @@
             <td>{{ $item->tugas}}</td>
              <td>{{ $item->deadline}}</td>
              <td>{{ $item->status}}</td>
+        <td>
+            <a href="/form_edit/{{ $item->id }}">Edit</a>
+            <form action="/hapus/{{ $item->id }}" method="POST" style="display:inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Delete</button>
+            </form>
+        </td>
     </tr>
     @endforeach
