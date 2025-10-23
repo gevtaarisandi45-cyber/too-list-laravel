@@ -15,7 +15,7 @@
 </head>
 <body>
     <h2>TODO LIST LARAVEL</h2>
-    <a href="tambah.php">+ Tambah Tugas</a>
+    <a href="/todo/tambah">+ Tambah Todo</a>
     <br><br>
     <table>
         <tr>
